@@ -1,8 +1,6 @@
 import { createVuetify, ThemeDefinition } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-
-// eslint-disable-next-line import/no-unresolved
 import { defineNuxtPlugin } from '#app'
 
 const defaultTheme: ThemeDefinition = {

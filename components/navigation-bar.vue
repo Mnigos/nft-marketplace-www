@@ -16,7 +16,7 @@ function toggleDrawer() {
 </script>
 
 <template>
-  <div>
+  <div class="h-full">
     <v-app-bar class="sm:px-4">
       <v-app-bar-nav-icon @click.stop="toggleDrawer" />
 

@@ -16,6 +16,9 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: 'setup-tests.ts',
+    deps: {
+      inline: ['vuetify'],
+    },
     coverage: {
       reporter: ['text', 'json', 'html'],
     },

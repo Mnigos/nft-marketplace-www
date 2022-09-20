@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useNavigationStore } from '~/stores/navigation'
+import { useNavigationStore } from '~/stores'
 
 const navigationStore = useNavigationStore()
 </script>

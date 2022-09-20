@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useWindowSize } from 'vue-window-size'
 
-import { useNavigationStore } from '~/stores/navigation'
+import { useNavigationStore } from '~/stores'
 
 const { width } = useWindowSize()
 const navigationStore = useNavigationStore()

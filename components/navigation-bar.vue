@@ -6,6 +6,17 @@ import { useNavigationStore } from '~/stores'
 const { width } = useWindowSize()
 const navigationStore = useNavigationStore()
 
+const pages = ref([
+  {
+    name: 'home',
+    path: '/',
+  },
+  {
+    name: 'auctions',
+    path: '/auctions',
+  },
+])
+
 const isMobile = computed(() => width.value <= 640)
 
 function toggleDrawer() {
@@ -23,9 +34,10 @@ function toggleDrawer() {
       <v-app-bar-title>NFT Marketplace</v-app-bar-title>
 
       <template v-if="!isMobile" #extension>
-        <v-tabs color="primary">
-          <v-tab>Home</v-tab>
-          <v-tab>Auctions</v-tab>
+        <v-tabs>
+          <v-tab v-for="{ name, path } in pages" :key="name" :to="path" exact>
+            {{ name }}
+          </v-tab>
         </v-tabs>
       </template>
 

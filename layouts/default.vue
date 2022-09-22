@@ -1,12 +1,15 @@
 <template>
-  <div class="bg-dark-800 min-h-screen">
+  <div w:bg="dark-800" w:min-h="screen">
     <v-app>
       <v-layout>
         <navigation-bar />
 
-        <div class="flex justify-center w-full">
+        <div w:w="full" w:flex="~" w:jutify="center">
           <main
-            class="w-full mt-[64px] sm:mt-[112px] py-4 <sm:px-4 sm:px-8 md:px-12 max-w-[1300px]"
+            w:w="full"
+            w:max-w="[1300px]"
+            w:m="t-[64px] sm:t-[112px]"
+            w:p="y-4 <sm:x-4 sm:x-8 md:x-12"
           >
             <slot />
           </main>

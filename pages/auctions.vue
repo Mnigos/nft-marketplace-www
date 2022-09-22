@@ -12,18 +12,17 @@ const auctions = Array.from({ length: 20 }).map((_value, index: number) =>
 </script>
 
 <template>
-  <div class="flex flex-col gap-8">
+  <div w:flex="~ col gap-8">
     <header>
-      <h1 class="text-4xl font-bold <sm:text-center md:text-left">Auctions</h1>
+      <h1 w:font="bold" w:text="4xl <sm:center md:left">Auctions</h1>
     </header>
 
-    <section
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8"
-    >
+    <section w:grid="~ cols-1 sm:cols-2 md:cols-3 lg:cols-4 xl:cols-5 gap-8">
       <div
         v-for="{ name, highestBid, image } in auctions"
         :key="name"
-        class="flex justify-center"
+        w:flex="~"
+        w:justify="center"
       >
         <auction-card :name="name" :highest-bid="highestBid" :image="image" />
       </div>

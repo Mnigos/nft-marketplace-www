@@ -13,7 +13,7 @@ const navigationStore = useNavigationStore()
     disable-route-watcher
     width="300"
   >
-    <div class="mt-2 flex justify-center">
+    <div w:m="t-2" w:flex="~" w:justify="center">
       <connect-wallet-button />
     </div>
 

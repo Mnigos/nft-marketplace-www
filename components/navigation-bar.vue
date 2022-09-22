@@ -27,8 +27,8 @@ function toggleDrawer() {
 </script>
 
 <template>
-  <div class="h-full">
-    <v-app-bar class="sm:px-4">
+  <div w:h="full">
+    <v-app-bar w:p="sm:x-4">
       <v-app-bar-nav-icon @click.stop="toggleDrawer" />
 
       <v-app-bar-title>NFT Marketplace</v-app-bar-title>
@@ -41,7 +41,7 @@ function toggleDrawer() {
         </v-tabs>
       </template>
 
-      <connect-wallet-button class="!hidden !sm:block" />
+      <connect-wallet-button w:display="!hidden !sm:block" />
     </v-app-bar>
 
     <navigation-drawer />

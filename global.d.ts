@@ -7,4 +7,8 @@ declare global {
     // eslint-disable-next-line @typescript-eslint/no-empty-interface
     interface Assertion<T = uknown> extends TestingLibraryMatchers<T, void> {}
   }
+
+  interface Window {
+    ethereum: import('ethers').providers.ExternalProvider
+  }
 }

@@ -1,21 +1,12 @@
 <script setup lang="ts">
 import { useWindowSize } from 'vue-window-size'
 
+import { pages } from './pages'
+
 import { useNavigationStore } from '~/stores'
 
 const { width } = useWindowSize()
 const navigationStore = useNavigationStore()
-
-const pages = ref([
-  {
-    name: 'home',
-    path: '/',
-  },
-  {
-    name: 'auctions',
-    path: '/auctions',
-  },
-])
 
 const isMobile = computed(() => width.value <= 640)
 

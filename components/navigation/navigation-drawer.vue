@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { pages } from './pages'
+
 import { useNavigationStore } from '~/stores'
 
 const navigationStore = useNavigationStore()
@@ -18,9 +20,12 @@ const navigationStore = useNavigationStore()
     </div>
 
     <v-list nav density="compact" color="primary">
-      <v-list-item title="Home" value="home" />
-
-      <v-list-item title="Auctions" value="auctions" />
+      <v-list-item
+        v-for="{ name, path } in pages"
+        :key="name"
+        :title="name"
+        :to="path"
+      />
     </v-list>
   </v-navigation-drawer>
 </template>

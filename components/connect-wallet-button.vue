@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { useWalletStore } from '~/stores'
+import { useNavigationStore, useWalletStore } from '~/stores'
 import { addressFormatter } from '~/utils'
 
 const walletStore = useWalletStore()
-
-const isDialogOpen = ref(false)
+const navigationStore = useNavigationStore()
 
 function connectWallet() {
-  if (!window.ethereum) return (isDialogOpen.value = true)
+  if (!window.ethereum) return navigationStore.toggleDialog()
 
   walletStore.connect()
 }
@@ -19,24 +18,6 @@ function connectWallet() {
       {{ addressFormatter(walletStore.account) }}
     </span>
 
-    <span v-else>Connect Wallet</span>
-
-    <v-dialog v-model="isDialogOpen">
-      <v-alert type="error" variant="flat">
-        <div w:flex="~ gap-4" w:items="center">
-          <p>Oops. Looks like you don't have installed metamask extension</p>
-
-          <v-btn color="white" variant="outlined" @click="isDialogOpen = false">
-            Close
-          </v-btn>
-        </div>
-      </v-alert>
-    </v-dialog>
+    <span v-else> Connect Wallet </span>
   </v-btn>
 </template>
-
-<style>
-.v-overlay__content {
-  width: auto !important;
-}
-</style>

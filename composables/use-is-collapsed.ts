@@ -31,7 +31,7 @@ export function useIsCollapsed() {
   }
 
   onMounted(() => window.addEventListener('scroll', handleScroll))
-  onBeforeUnmount(() => window.addEventListener('scroll', handleScroll))
+  onBeforeUnmount(() => window.removeEventListener('scroll', handleScroll))
 
   return { isCollapsed, toggleCollapsed, scrollDirection }
 }

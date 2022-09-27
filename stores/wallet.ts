@@ -15,8 +15,6 @@ export const useWalletStore = defineStore('wallet', {
   }),
   actions: {
     async connect() {
-      if (!window.ethereum) return
-
       this.provider = new providers.Web3Provider(window.ethereum).provider
 
       const [currentAccount] = await this.provider.request({

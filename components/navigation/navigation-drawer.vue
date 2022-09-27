@@ -14,6 +14,10 @@ const navigationStore = useNavigationStore()
     disable-resize-watcher
     disable-route-watcher
     width="300"
+    w:position="!fixed"
+    w:m="-t-16"
+    w:p="t-16"
+    w:h="!full"
   >
     <div w:m="t-2" w:flex="~" w:justify="center">
       <connect-wallet-button />

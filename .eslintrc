@@ -11,7 +11,8 @@
     "onUnmounted": "readonly",
     "onBeforeMount": "readonly",
     "onBeforeUpdate": "readonly",
-    "onBeforeUnmount": "readonly"
+    "onBeforeUnmount": "readonly",
+    "definePageMeta": "readonly"
   },
   "env": {
     "browser": true,
@@ -42,6 +43,7 @@
   },
   "plugins": [
     "vue",
+    "nuxt",
     "@typescript-eslint",
     "eslint-plugin-import-helpers",
     "testing-library",

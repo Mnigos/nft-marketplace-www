@@ -4,7 +4,7 @@
       <v-layout>
         <navigation-bar />
 
-        <div w:w="full" w:flex="~" w:jutify="center">
+        <div w:w="full" w:flex="~" w:justify="center">
           <main
             w:w="full"
             w:max-w="[1300px]"

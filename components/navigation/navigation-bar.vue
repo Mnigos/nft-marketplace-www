@@ -3,12 +3,13 @@ import { useWindowSize } from 'vue-window-size'
 
 import { pages } from './pages'
 
-import { useNavigationStore } from '~/stores'
+import { useNavigationStore, useWalletStore } from '~/stores'
 import { useIsCollapsed } from '~/composables'
 
 const { width } = useWindowSize()
 const { isCollapsed, toggleCollapsed } = useIsCollapsed()
 const navigationStore = useNavigationStore()
+const walletStore = useWalletStore()
 
 const isMobile = computed(() => width.value <= 640)
 
@@ -40,10 +41,20 @@ function toggleDrawer() {
         </v-tabs>
       </template>
 
-      <connect-wallet-button
-        v-if="!isCollapsed"
-        w:display="!hidden !sm:block"
-      />
+      <template #append>
+        <div w:flex="~ gap-2" w:items="center">
+          <connect-wallet-button
+            v-if="!isCollapsed"
+            w:display="!hidden !sm:block"
+          />
+
+          <v-btn
+            v-if="walletStore.isConnected"
+            icon="mdi-account"
+            to="/account"
+          />
+        </div>
+      </template>
     </v-app-bar>
 
     <navigation-drawer />

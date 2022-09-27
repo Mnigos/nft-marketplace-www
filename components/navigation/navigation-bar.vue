@@ -20,7 +20,7 @@ function toggleDrawer() {
 <template>
   <div w:h="full">
     <v-app-bar w:p="sm:x-4">
-      <v-app-bar-nav-icon @click.stop="toggleDrawer" />
+      <v-app-bar-nav-icon v-if="isMobile" @click.stop="toggleDrawer" />
 
       <v-app-bar-title>NFT Marketplace</v-app-bar-title>
 
